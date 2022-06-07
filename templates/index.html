@@ -1,0 +1,170 @@
+<html>
+
+
+<title>Salary Prediction</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+<div class="content">
+    <h1 style="text-align: center">Salary Prediction
+    </h1>
+
+    <div class="form">
+        <form action="/result" method="POST" >
+
+            <label for="age">Age</label>
+            <input  type="number" id="age" name="age" min="0" >
+
+            <label for="edu_num">Education num</label>
+            <input  type="number" id="edu_num" name="edu_num"  min="0">
+
+            <label for="cap_gain">Capital gain</label>
+            <input  type="number" id="cap_gain" name="cap_gain" >
+
+            <label for="cap_loss">Capital loss</label>
+            <input type="number" id="cap_loss" name="cap_loss" >
+
+            <label for="hrs_work">Hours per week</label>
+            <input  type="number" id="hrs_work" name="hrs_work" min="0" >
+
+            <label for="male">Male</label>
+            <input type="radio" name="gender" id="male" value="1">
+            <label for="female">Female</label>
+            <input type="radio" name="gender" id="female" value="0">
+
+            <label for='work_class'>Workclass</label>
+            <select name='work_class' id='work_class' >
+                <option value=" 0 "> ? </option>
+                <option value=" 1 "> Federal-gov </option>
+                <option value=" 2 "> Local-gov </option>
+                <option value=" 3 "> Never-worked </option>
+                <option value=" 4 "> Private </option>
+                <option value=" 5 "> Self-emp-inc </option>
+                <option value=" 6 "> Self-emp-not-inc </option>
+                <option value=" 7 "> State-gov </option>
+                <option value=" 8 "> Without-pay </option>
+            </select>
+
+                <label for="edu">Education</label>
+            <select name="edu" id="edu">
+                <option value=" 0 "> 10th </option>
+                <option value=" 1 "> 11th </option>
+                <option value=" 2 "> 12th </option>
+                <option value=" 3 "> 1st-4th </option>
+                <option value=" 4 "> 5th-6th </option>
+                <option value=" 5 "> 7th-8th </option>
+                <option value=" 6 "> 9th </option>
+                <option value=" 7 "> Assoc-acdm </option>
+                <option value=" 8 "> Assoc-voc </option>
+                <option value=" 9 "> Bachelors </option>
+                <option value=" 10 "> Doctorate </option>
+                <option value=" 11 "> HS-grad </option>
+                <option value=" 12 "> Masters </option>
+                <option value=" 13 "> Preschool </option>
+                <option value=" 14 "> Prof-school </option>
+                <option value=" 15 "> Some-college </option>
+            </select>
+
+            <label for="marital_status">Marital Status</label>
+            <select name="marital_status" id="marital_status">
+                <option value=" 0 "> Divorced </option>
+                <option value=" 1 "> Married-AF-spouse </option>
+                <option value=" 2 "> Married-civ-spouse </option>
+                <option value=" 3 "> Married-spouse-absent </option>
+                <option value=" 4 "> Never-married </option>
+                <option value=" 5 "> Separated </option>
+                <option value=" 6 "> Widowed </option>
+            </select>
+
+            <label for="Occ">Occupation</label>
+            <select name="Occ" id="Occ">
+             <option value=" 0 "> ? </option>
+            <option value=" 1 "> Adm-clerical </option>
+            <option value=" 2 "> Armed-Forces </option>
+            <option value=" 3 "> Craft-repair </option>
+            <option value=" 4 "> Exec-managerial </option>
+            <option value=" 5 "> Farming-fishing </option>
+            <option value=" 6 "> Handlers-cleaners </option>
+            <option value=" 7 "> Machine-op-inspct </option>
+            <option value=" 8 "> Other-service </option>
+            <option value=" 9 "> Priv-house-serv </option>
+            <option value=" 10 "> Prof-specialty </option>
+            <option value=" 11 "> Protective-serv </option>
+            <option value=" 12 "> Sales </option>
+            <option value=" 13 "> Tech-support </option>
+            <option value=" 14 "> Transport-moving </option>
+            </select>
+
+            <label for="relation">Relationship</label>
+            <select name="relation" id="relation">
+                <option value=" 0 "> Husband </option>
+                <option value=" 1 "> Not-in-family </option>
+                <option value=" 2 "> Other-relative </option>
+                <option value=" 3 "> Own-child </option>
+                <option value=" 4 "> Unmarried </option>
+                <option value=" 5 "> Wife </option>
+            </select>
+
+            <label for="race">Race</label>
+            <select name="race" id="race">
+                <option value=" 0 ">  Black </option>
+                <option value=" 1 "> Amer-Indian-Eskimo </option>
+                <option value=" 2 "> Asian-Pac-Islander </option>
+                <option value=" 3 "> Other </option>
+                <option value=" 4 "> White </option>
+            </select>
+
+
+            <label for="country">Native Country</label>
+            <select name="country" id="country">
+                <option value=" 0 "> Cambodia </option>
+                <option value=" 1 "> Canada </option>
+                <option value=" 2 "> China </option>
+                <option value=" 3 "> Columbia </option>
+                <option value=" 4 "> Cuba </option>
+                <option value=" 5 "> Dominican-Republic </option>
+                <option value=" 6 "> Ecuador </option>
+                <option value=" 7 "> El-Salvador </option>
+                <option value=" 8 "> England </option>
+                <option value=" 9 "> France </option>
+                <option value=" 10 "> Germany </option>
+                <option value=" 11 "> Greece </option>
+                <option value=" 12 "> Guatemala </option>
+                <option value=" 13 "> Haiti </option>
+                <option value=" 14 "> Holand-Netherlands </option>
+                <option value=" 15 "> Honduras </option>
+                <option value=" 16 "> Hong </option>
+                <option value=" 17 "> Hungary </option>
+                <option value=" 18 "> India </option>
+                <option value=" 19 "> Iran </option>
+                <option value=" 20 "> Ireland </option>
+                <option value=" 21 "> Italy </option>
+                <option value=" 22 "> Jamaica </option>
+                <option value=" 23 "> Japan </option>
+                <option value=" 24 "> Laos </option>
+                <option value=" 25 "> Mexico </option>
+                <option value=" 26 "> Nicaragua </option>
+                <option value=" 27 "> Outlying-US(Guam-USVI-etc) </option>
+                <option value=" 28 "> Peru </option>
+                <option value=" 29 "> Philippines </option>
+                <option value=" 30 "> Poland </option>
+                <option value=" 31 "> Portugal </option>
+                <option value=" 32 "> Puerto-Rico </option>
+                <option value=" 33 "> Scotland </option>
+                <option value=" 34 "> South </option>
+                <option value=" 35 "> Taiwan </option>
+                <option value=" 36 "> Thailand </option>
+                <option value=" 37 "> Trinadad&amp;Tobago </option>
+                <option value=" 38 "> United-States </option>
+                <option value=" 39 "> Vietnam </option>
+                <option value=" 40 "> Yugoslavia </option>
+            </select>
+
+            <input type="submit" value="Predict">
+        </form>
+    </div>
+
+    <div style='color:red;font-size:40px;margin: 0 auto;'>
+        {{result}}
+    </div>
+
+
+</html>
